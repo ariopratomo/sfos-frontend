@@ -8,6 +8,8 @@ import Home from "./components/home.component";
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/navbar.component";
 import Order from "./components/orders/order.component";
+import FoodList from "./components/foods/foodlist.component";
+import FoodCreate from "./components/foods/foodcreate.component";
 
 import MiddleWareService from "./services/middleware.service";
 
@@ -30,13 +32,15 @@ const App = () =>
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/order" element={<Order />} />
-
+              <Route path="/food-list" element={<FoodList/>} />
+              <Route path="/food-create" element={<FoodCreate/>} />
+              <Route path="*" element={<Home />} />
             </Routes>
           ) : (
             <Routes>
-              <Route path="/order" element={<Order />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/" element={<Login />} />
+              <Route path="*" element={<Login />} />
+              
             </Routes>
           )
         }
